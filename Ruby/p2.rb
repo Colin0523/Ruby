@@ -140,6 +140,8 @@ p triples.to_a.include? "ABCD"
 s = 'string'
 sym = :"#{s}"
 
+=begin
+	
 name = :size
 if o.respond_to? name
 	o.send(name)
@@ -151,11 +153,46 @@ sym = str.to_sym #Another way to do the same thing
 str = sym.to_s #Covert back to a string
 str = sym.id2nmae #Another way to do it
 
+
+=end
+
+
+
+
+
 #3.7  true, false ,nil
+o =nil
+p o.nil?
 
- 
+#3.8 对象
+s =  "Ruby" #Create a String object.Store a reference to it in s 
+t = s       #Copy the reference to t.s and t both refer to the same object
+t[-1] = ""  #Modify the object through the reference in t 
+print s     #Access the modified object through s. print "Rub"
+t = "Java"  #t now refer to a different object
+print s,t   #Prints "RubJava"
 
-f  ff 
+#3.8.4 对象的类和对象的类型
+p o.class == String      #true if is o a String
+p o.instance_of? String  #true if is o a String
+
+
+x = 1                      #This is the value we're working with
+x.instance_of? Fixnum      #true: is an instance of Fixum
+x.instance_of? Numeric     #false: instance_of? doesn't check inheritance
+x.is_a? Fixum              #true: is a Fixnum
+x.is_a? Integer            #true: is an integer
+x.is_a? Numeric            #true: is a Numeric
+x.is_a? Comparable		   #true: works with mixin modules ,too
+x.is_a? object			   #true for any valuse of x 
+Numeric === x       	   #true: x is_a Numeric
+
+
+
+
+
+
+
 
 
 
