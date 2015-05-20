@@ -129,7 +129,7 @@ p "cover?"
 triples = "AAA"..."ZZZ"
 p triples.include? "ABC" 
 p triples.include? "ABCD"
-p triples.cover? "ABCD"
+#p triples.cover? "ABCD"
 p triples.to_a.include? "ABCD"
 
 
@@ -180,16 +180,25 @@ p o.instance_of? String  #true if is o a String
 x = 1                      #This is the value we're working with
 x.instance_of? Fixnum      #true: is an instance of Fixum
 x.instance_of? Numeric     #false: instance_of? doesn't check inheritance
-x.is_a? Fixum              #true: is a Fixnum
+#x.is_a? Fixum              #true: is a Fixnum
 x.is_a? Integer            #true: is an integer
 x.is_a? Numeric            #true: is a Numeric
 x.is_a? Comparable		   #true: works with mixin modules ,too
-x.is_a? object			   #true for any valuse of x 
+#x.is_a? object			   #true for any valuse of x 
 Numeric === x       	   #true: x is_a Numeric
 
+#3.8.5对象的相等性
+a = "Ruby"		#One reference to one String object
+b = c = "Ruby"	#Two references to another String object
+p a.equal?(b) 	#false: a and b are different objects
+p b.equal?(c)	#ture: b and c are refer to the same object
 
+p a.object_id == b.object_id #words like a.equal?(b)
 
-
+a = "Ruby"
+b = "Ruby"
+p a.equal?(b) #false: a and b do not refer to the same object
+p a == b      #true： but these two distinct objects have euqal values
 
 
 
