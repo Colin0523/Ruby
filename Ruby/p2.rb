@@ -200,10 +200,42 @@ b = "Ruby"
 p a.equal?(b) #false: a and b do not refer to the same object
 p a == b      #true： but these two distinct objects have euqal values
 
+#3.8.5 ===操作符
+(1..10) === 5     #true: 5 is in the range 1..10
+/\d+/ === "123"	  #true: the string matches the regular expression
+String === "s"    #true: "s" is an instance of the class String
+p :s === "s"		  #true in Ruby 1.9.2
 
 
+#4.4方法调用
+puts "hello world" #puts invoked on self,with one string tag
+Math.sqrt(2)       #sqrt invoked on object Math with an arg
+#message.length     #length invoked on object message :no args 
+a.each {|x| p x}   #each invoked on object a,with an associated block
 
+#4.5赋值
+x = 1 
+x += 1
+x,y,z = 1,2,3
 
+class Ambiguous
+	def x; 1; end  #A method named x.Always returns 1
+
+	def test 
+		puts x		#No variable has been seen;refers to method above:prints 1
+		
+		#The lince below is never evaluated,because of the "if false"clause.But
+		#the parser sees it and treats x as a variable for the reset of the method 
+		x = 0 if false
+
+		puts x  #x is a variable,but has never been assigend to: prints nil 
+
+		x = 2 	#This is assignment does get evaluated
+		puts x	#So now this line prints 2
+    end
+end
+
+#4.6.14
 
 
 
