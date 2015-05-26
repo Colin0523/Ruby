@@ -211,7 +211,7 @@ p :s === "s"		  #true in Ruby 1.9.2
 puts "hello world" #puts invoked on self,with one string tag
 Math.sqrt(2)       #sqrt invoked on object Math with an arg
 #message.length     #length invoked on object message :no args 
-a.each {|x| p x}   #each invoked on object a,with an associated block
+#a.each {|x| p x}   #each invoked on object a,with an associated block
 
 #4.5赋值
 x = 1 
@@ -238,7 +238,18 @@ end
 #4.6.14
 
 
+#7.1.4 定义to_s 方法
+class Point
+	def initialize(x,y)
+		@x,@y = x,y
+	end
 
+	def to_s            #Return a String that represents this point 
+		"(#@x,#@y)"     #Just interpolate the instance variables into a string
+	end
+end
 
+p = new Point(10,20)   #Create a new Point object 
+puts p 				   #Display "(1,2)"
 
 
