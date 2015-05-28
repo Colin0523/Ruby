@@ -336,6 +336,58 @@ class1obj2.print_gloable2
  
 
 
+#实例变量
+class Customer 
+	def initialize(id,name,addr)
+ 
+ 		@cust_id = id 
+ 		@cust_name = name 
+ 		@cust_addr = addr 
+ 	end
+
+ 	def display_details()
+
+ 		puts "Customer id #{@cust_id}"
+ 		puts "Customer name #{@cust_name}"
+ 		puts "Customer addr #{@cust_addr}"
+ 	end
+end 
+
+
+#创建对象
+cust1 = Customer.new("1","Max","Apartments")
+cust2 = Customer.new("2","Jack","Khadala")
+
+#调用方法
+cust1.display_details()
+cust2.display_details()
+
+
+#常量
+class Example
+	VAR1 = 100
+	VAR2 = 50
+
+	def show 
+		puts "Value of first Constant is #{VAR1}"
+		puts "Value of second Constant is #{VAR2}"
+	end
+end 
+
+object = Example.new 
+object.show
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
