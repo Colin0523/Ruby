@@ -378,24 +378,124 @@ object = Example.new
 object.show
 
 
+#第二个实例
+CONST = "out there"
+class Inside_one
+	CONST = proc {'in there'}
+	def where_is_my_const
+		::CONST + "inside_one"
+	end
+end
 
+class Inside_two
+	CONST = 'inside_two'
+	def where_is_my_const
+		CONST
+	end
+end
 
+puts Inside_one.new.where_is_my_const
+puts Inside_two.new.where_is_my_const
+puts Object::CONST + Inside_two::CONST
+puts Inside_two::CONST + CONST
+puts Inside_one::CONST
+puts Inside_one::CONST.call + Inside_two::CONST
 
+#判断
+x = 1
+if x > 2
+	puts "X is greater than 2"
+elsif x <=2 and x != 0
+	puts "X is 1"
+else 
+	puts "I can't guess the number"
+end 
 
+#if修饰符
+$debug = 1
+print "debug\n" if $debug
 
+#unless
 
+x = 1
+unless x > 2
+	puts "X is less than 2"
 
+else 
+	puts "x  is greater than 2"
+	
+end
 
+#unless修饰符
+$var = 1
+print "1 -- Value is set\n " if $var
+print "2 --Value is set\n " unless $var
 
+$var = false
+print = "3 -- Value is set\n" unless $var
+	
+#case语句
+$age = 24
+case $age 
+when 0 .. 2
+	puts 'baby'
+when 3 .. 6
+	puts 'little child'
+when 7 .. 12
+	puts 'child'
+when 13 .. 18
+	puts 'youth'
+else
+	puts 'adult'
+end
+	
+		
+#while循环
+$i = 0
+$num = 5
 
+while $i < $num do
+	puts ("Inside the loop i = #{$i}")
+	$i += 1	
+end
 
+#while修饰符
+$p = 0
+$sum = 5
+begin
+	puts ("Inside loop p = #{$p}")
+	$p += 1
+end while $p < $num
 
+#until语句
+$u = 0
+until $u > $num do 
+	puts "Inside loop u= #{$u}"
+	$u += 1;
+end
 
+#for循环
+for i in 0 .. 5
+	puts "Value of local variable is #{i}"
+end 
 
+(0 .. 5).each do |o|
+	puts "The Value of local variable is #{o}"
+end
 
+for i in 0 .. 5
+	if i > 2 then 
+		break
+	end 
+	puts "i is #{i}"
+end 
 
-
-
+for b in 0 .. 5
+	if b < 2 then 
+		next
+	end 
+	puts "issss is #{b}"
+end 
 
 
 
