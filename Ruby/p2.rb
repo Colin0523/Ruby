@@ -378,7 +378,16 @@ object = Example.new
 object.show
 
 
+#Ruby 点运算符. 和双冒号运算符::
+MR_COUNT = 0 #定义在object 类上的常量
+module FOO
+	MR_COUNT = 0 
+	::MR_COUNT =1 #设置全局变量为1
+	MR_COUNT =2 #设置局部计数为2
+end 
 
+puts MR_COUNT #全局常量
+puts FOO::MR_COUNT #FOO的局部常量
 
 
 
