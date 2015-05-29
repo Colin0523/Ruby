@@ -389,7 +389,7 @@ end
 
 puts MR_COUNT #全局常量
 puts FOO::MR_COUNT #FOO的局部常量
-=======
+
 #第二个实例
 CONST = "out there"
 class Inside_one
@@ -510,28 +510,134 @@ for b in 0 .. 5
 	puts "issss is #{b}"
 end 
 
+#方法
+def test(a1 = "Ruby",a2 = "Perl")
+	puts "The programming language is #{a1}"
+	puts "The programming language is #{a2}"
+end 
+
+test "C","C++"
+test
+
+#返回值
+def test
+	i = 100
+	j = 200
+	k = 300
+    return i,j,k
+end
+var = test
+puts var
+
+#可变数量的参数
+def sample(*test)
+	puts "The number of parameters is #{test.length}"
+	for  i in 0 .. test.length
+		puts "The number of parameters are #{test[i]}"
+	end
+end
+sample "Zara","6","F"
+sample "Mac","36","M","MCA"
+
+#类方法
+
+#alias语句
+#alias method method
+#alias $global_variable $global_variable
+
+#yield语句
+def test
+	puts "You are in the method"
+	yield 5
+	puts "You are again back to the method"
+	yield
+end 
+test {puts "You are in the block"}
+	
+def  test
+	yield 7
+	puts "You are in the method test"
+	yield 100
+	
+end
+test {|a| puts "You are in the block #{a}"}
 
 
+#块和方法
+def test(&block)
+	block.call
+	
+end
+test {puts "Hello World"}
+
+#模块
+module Trig
+	PI = 3.141592654
+	def Trig.sin(x)
+
+	# .. 
+	end 
+
+	def Trig.cos(x)
+	#..
+	end
+end 
+
+y = Trig.cos(Trig::PI/4)
+
+module Week
+   FIRST_DAY = "Sunday"
+   def Week.weeks_in_month
+      puts "You have four weeks in a month"
+   end
+   def Week.weeks_in_year
+      puts "You have 52 weeks in a year"
+   end
+end
 
 
+class Decade
+include Week
+   no_of_yrs=10
+   def no_of_months
+      puts Week::FIRST_DAY
+      number=10*12
+      puts number
+   end
+end
+d1=Decade.new
+puts Week::FIRST_DAY
+Week.weeks_in_month
+Week.weeks_in_year
+d1.no_of_months
 
+#Mixin
+module A
+   def a1
+   end
+   def a2
+   end
+end
+module B
+   def b1
+   end
+   def b2
+   end
+end
 
+class Sample
+include A
+include B
+   def s1
+   end
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+samp=Sample.new
+samp.a1
+samp.a2
+samp.b1
+samp.b2
+samp.s1
 
 
 
