@@ -639,6 +639,61 @@ samp.b1
 samp.b2
 samp.s1
 
+#表达式置换
+x, y, z  = 12, 36, 72
+puts "The value of x is #{x}."
+puts "The sum of x and y is  #{x + y}."
+puts "The average of was  #{(x + y + z)/3}."
+
+#字符串内建方法
+myStr = String.new(str = "THIS IS TEST")
+foo = myStr.downcase
+puts "#{foo}"
+
+
+#数组
+names = Array.new(20) 
+puts names.size
+puts names.length
+names.(4,'mac')
+puts names 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
