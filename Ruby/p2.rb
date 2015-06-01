@@ -658,10 +658,10 @@ puts names.length
 names.(4,'mac')
 puts names 
 
-
-
-
-
+#范围Range
+#.作为序列的范围
+#.作为条件的范围
+#.作为间隔的范围
 
 
 
