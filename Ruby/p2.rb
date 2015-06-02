@@ -383,8 +383,8 @@ object.show
 MR_COUNT = 0 #定义在object 类上的常量
 module FOO
 	MR_COUNT = 0 
-	::MR_COUNT =1 #设置全局变量为1
-	MR_COUNT =2 #设置局部计数为2
+#	::MR_COUNT =1 #设置全局变量为1
+#	MR_COUNT =2 #设置局部计数为2
 end 
 
 puts MR_COUNT #全局常量
@@ -655,7 +655,7 @@ puts "#{foo}"
 names = Array.new(20) 
 puts names.size
 puts names.length
-names.(4,'mac')
+#names (4,'mac')
 puts names 
 
 #范围Range
@@ -663,15 +663,75 @@ puts names
 #.作为条件的范围
 #.作为间隔的范围
 
+#作为序列的范围
+range1 = (1 .. 10).to_a
+range2 = ('bar' .. 'bat').to_a
+puts "#{range1}"
+puts "#{range2}"
 
+#Assume a range 
+digits = 0 .. 9
+puts digits.include?(5)
+ret = digits.min
+puts "Min value is #{ret}"
 
+ret = digits.max
+puts "Max values is #{ret}"
 
+ret = digits.reject{|i| i < 5}
+puts "Rejected values are #{ret}"
 
+digits.each do |digit|
+	puts "In Loop #{digit}"
+end
 
+#作为条件的范围
+score  = 90
+result = case score	
+	when 0 .. 40: "Fail"
+	when 41 .. 60: "Pass"
+	when 61 .. 70: "Pass with Merit"
+	when 71 .. 100: "Pass with Distinction"
+	else "Invalid Score"
+end
+puts result
 
+#作为间隔的范围
+if ((1 .. 10) === 5)
+	puts "5 lies in (1 .. 10)"
+end
 
+if (('a' .. 'j') === 'c')
+	puts "c lies in ('a' .. 'j')"
+end
 
+if (('a' .. 'j') === 'z')
+	puts "z lies in ('a' .. 'j')"
+else 
+	puts "z lies is not in ('a' .. 'j')"
+end
 
+#Ruby迭代器
+#迭代器是集合支持的方法。存储一组数据成员的对象称
+#为集合,在 Ruby 中，数组和散列可以称之为集合
+#each迭代器
+
+ary = [1,2,3,4,5]
+ary.each do |i|
+	puts i
+end
+
+#collect迭代器
+#collect 方法不需要总是与一个块关联
+#collect 方法返回整个集合，不管它是数组或者是哈希。
+a = [1,2,3,4,5]
+b = Array.new
+b = a.collect
+puts b 
+
+a = [1,2,3,4,5]
+b = a.collect {|x| 10*x}
+puts b
 
 
 

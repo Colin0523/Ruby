@@ -1,4 +1,3 @@
-
 a = [1,2,3,4]
 b = a.map { |x| x*x  }
 c = a.select { |x| x%2 == 0}
@@ -148,4 +147,167 @@ puts future
 
 diff = future - now
 puts diff
+
+#Ruby文件的输入与输出
+#Ruby 提供了一整套 I/O 相关的方法，在内核（Kernel）
+#模块中实现。所有的 I/O 方法派生自 IO 类。
+#类 IO 提供了所有基础的方法，
+#比如 read、 write、 gets、 puts、 readline、 getc 
+#和 printf
+
+#puts 语句
+#puts 语句指示程序显示存储在变量中的值。
+val1 = "This is valuable one"
+val2 = "This is valuable Tow"
+puts val1
+puts val2
+
+#gets 语句
+#gets 语句可用于获取来自名为 
+#STDIN 的标准屏幕的用户输入
+puts "Enter a value: "
+va3 = gets
+puts va3
+
+#putc 语句
+#putc 语句可用于依次输出一个字符
+str = "Hello Ruby"
+putc str
+
+#print语句
+#puts 语句在输出内容后会跳到下一行，
+#而使用 print 语句时，光标定位在同一行
+print "Hello World\n"
+print "Good Morning"
+
+#打开和关闭文件
+#File.new方法
+#aFile = File.new("filename", "mode")
+   # ... 处理文件
+#aFile.close
+
+
+#File.open 方法
+#File.open("filename", "mode") do |aFile|
+   # ... process the file
+#end
+
+#sysread方法
+#输入文本文件：
+#This is a simple text file for testing purpose.
+#aFile = File.new("input.txt","r")
+#if aFile
+#	content = aFile.sysread(20)
+#	puts content
+#else 
+#	puts "Unable to open file"
+#end
+
+#syswrite 方法
+#当使用方法 syswrite 时，您需要以写入模式打开文件
+#aFile = File.new("input.txt","r+")
+#if aFile 
+#	aFile.syswrite("ABCDEF")
+#else
+#	puts "Unable to open file!"
+#end
+
+#each_byte 方法
+#each_byte 是个可以迭代字符串中每个字符
+# aFile = File.new("input.txt", "r+")
+# if aFile
+#    aFile.syswrite("ABCDEF")
+#    aFile.rewind
+#    aFile.each_byte {|ch| putc ch; putc ?. }
+# else
+#    puts "Unable to open file!"
+# end
+
+#IO.readline方法
+#该方法逐行返回文件的内容
+# arr = IO.readlines("input.txt")
+# puts arr[0]
+# puts arr[1]
+
+#IO.foreach 方法
+#方法 foreach 不是返回一个数组
+#IO.foreach("input.txt"){|block| puts block}
+
+#重命名和删除文件
+#重命名文件 test1.txt 为 test2.txt
+#File.rename( "test1.txt", "test2.txt" )
+
+#删除文件
+#File.delete("asdasd.rb")
+
+#文件模式与所有权
+#使用带有掩码的 chmod 方法来改变文件的模式或权限/访问列表
+# file = File.new( "test.txt", "w" )
+# file.chmod( 0755 )
+
+#文件查询
+#检查文件是否存在
+# a = File.open("file.rb") if File::exists?( "file.rb" )
+# p "#{a}"
+# #查询文件是否是文件
+# a = File.file?("test.txt")
+# p "#{a}"
+# #查询是否是目录
+# a = File::directory?( "/usr/local/bin" ) 
+# p "#{a}"
+# #文件
+# a = File::directory?( "file.rb" )
+# p "#{a}"
+# #检查可读，可写，可执行 
+# a = File.readable?( "test.txt" )   # => true
+# p "#{a}"
+# a = File.writable?( "test.txt" )   # => true
+# p "#{a}"
+# a = File.executable?( "test.txt" ) # => false
+# p a
+# #检查是否大小写为0
+# a = File.zero?("test.txt")
+# p a
+# #返回文件大小
+# #a = File.size("test.txt")
+# p a 
+# #检查文件类型
+# a = File::ftype( "test.txt" )     # => file
+# p a 
+
+#目录
+#改变当前目录
+#Dir.chdir("/usr/bin")
+
+#查看目录
+puts Dir.pwd
+
+#获取指定目录内的文件和目录列表
+puts Dir.entries("E:/Ruby/Ruby").join(' ')
+
+#Dir.foreach返回一个数组，包含指定目录内的所有项
+Dir.foreach("E:/Ruby/Ruby") do |entry|
+	puts entry
+end
+
+#获取目录列表的一个更简洁的方式是通过使用 Dir 的类数组的方法：
+p Dir["E:/Ruby/Ruby/*"]
+
+#创建目录
+#Dir.mkdir("mynewdir2",755)
+
+#删除目录
+#Dir.delete("mynewdir2")
+
+#创建临时目录
+#Dir.tmpdir 提供了当前系统上临时目录的路径
+#但是该方法默认情况下是不可用的
+#为了让 Dir.tmpdir 可用，
+#使用必需的 'tmpdir' 是必要的
+require 'tmpdir'
+   tempfilename = File.join(Dir.tmpdir, "tingtong")
+   tempfile = File.new(tempfilename, "w")
+   tempfile.puts "This is a temporary file"
+   tempfile.close
+   File.delete(tempfilename)
 
