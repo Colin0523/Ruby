@@ -311,3 +311,121 @@ require 'tmpdir'
    tempfile.close
    File.delete(tempfilename)
 
+#异常
+#我们可以在 begin/end 块中附上可能抛出异常的代码，
+#并使用 rescue 子句告诉 Ruby 完美要处理的异常类型
+begin
+	file = open("/unexistant_file")
+	if file 
+		puts "File opened successfully"
+	end
+rescue 
+	file = STDIN
+end 
+print file, "==",STDIN,"\n"
+
+#使用retry语句
+#可以使用 rescue 块捕获异常，然后使用 retry 
+#语句从开头开始执行 begin 块
+# begin 
+# 	file = open("/unexistant_file")
+# 	if file 
+# 		puts "file opened successfully"
+# 	end
+# rescue
+# 	fname = "exitstant_file"
+# 	retry
+# end
+
+#使用raise语句
+begin
+	puts 'I am before the raise'
+	raise 'An error has occurred'
+	puts 'I am after the raise'
+rescue
+	puts 'I am rescueed'
+end 
+puts 'I am after the begin block'
+
+begin  
+  raise 'A test exception.'  
+rescue Exception => e  
+  puts e.message  
+#  puts e.backtrace.inspect  
+end
+
+#使用ensure语句
+#ensure 放在最后一个 rescue 子句后，
+#并包含一个块终止时总是执行的代码块
+#它与块是否正常退出、是否抛出并处理异常、
+#是否因一个未捕获的异常而终止，这些都没关系，
+#ensure 块始终都会运行  
+begin 
+	raise 'A test exception'
+rescue Exception => e
+	puts e.message
+ensure
+	puts "Ensuring execution"
+end
+
+#使用使用 else 语句
+#如果提供了 else 子句，它一般是放置在 rescue 子句之后
+#任意 ensure 之前
+#else 子句的主体只有在代码主体没有抛出异常时执行
+begin 
+	puts "I'm not raising exception"
+rescue Exception => e
+	puts e.message
+else
+	puts "Congratulations -- no errors!"
+ensure 
+	puts "Ensuring exceution"
+end 
+
+#Catch 和 Throw
+# def promptAndGet(prompt)
+#    print prompt
+#    res = readline.chomp
+#    throw :quitRequested if res == "!"
+#    return res
+# end
+
+
+# catch :quitRequested do
+#    name = promptAndGet("Name: ")
+#    age = promptAndGet("Age: ")
+#    sex = promptAndGet("Sex: ")
+#    # ..
+#    # 处理信息
+# end
+
+# promptAndGet("Name:")
+# promtAndGet("Name:")		   
+
+#类Exception
+# Ruby 的标准类和模块抛出异常。
+#所有的异常类组成一个层次，
+#包括顶部的 Exception 类在内。
+#下一层是七种不同的类型：
+# Interrupt
+# NoMemoryError
+# SignalException
+# ScriptError
+# StandardError
+# SystemExit
+
+# class FileSaveError < StandardError
+# 	attr_reader :reason
+# 	def initialize(reason)
+# 		@reason = reason
+# 	end 
+# end 
+# File.open(path,'w') do |file|
+# begin 
+# 	#写出数据
+# rescue
+# 	#发生错误
+# 	raise FileSaveError.new($!)
+# end
+# end 
+
