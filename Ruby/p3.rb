@@ -169,13 +169,148 @@ end
 
 #创建对象
 box4 = BoxFour.new(99,101)
-Area
+
 #调用实例方法
 a = box4.getArea()
 puts "Area of the box is :#{a}"
 
 #尝试调用protected的实例方法
-box4.printArea()
+#box4.printArea
+
+#类的继承
+class BoxFive
+	#构造器方法
+	def initialize(w,h)
+		@width,@height = w,h
+
+	end
+
+	#实例方法
+	def getAera
+		@width * @height
+		
+	end
+
+end 
+
+#定义子类
+class BigBox < BoxFive
+	#添加一个新的实例方法
+	def printArea
+		@area = @width * @height
+		puts "Big box area is : #{@area}"
+	end
+end 
+
+#创建对象
+box5 = BigBox.new(55,45)
+
+#输出面积
+box5.printArea()
+
+#方法重载
+class BoxSix
+	#构造器方法
+	def initialize(w,h)
+		@width,@height = w, h
+	end 
+
+	#实例方法
+	def getArea
+		@width * @height
+	end 
+end 
+
+#定义子类
+class BigBox2 < BoxSix
+	#改变已有的getArea方法
+	def getArea
+		@area = @width ** @height
+		puts "Big box area is : #{@area}"
+	end 
+end 
+
+#创建对象
+box6 = BigBox2.new(12,5)
+
+#使用重载的方法输出结果
+box6.getArea
+
+#运算符重载
+class BoxSeven
+	#构造器方法
+	def initialize(w,h) #初始化width和height
+		@width,@height = w, h
+	end 
+
+	#定义 + 来执行向量加法
+	def +(other)
+		BoxSeven.new(@width + other.width, @height + other.height )
+	end 
+
+	#定义一元运算符 - 来对width和height求反
+	def -@
+		BoxSeven.new(-@width,-@height)
+	end 
+ 
+ 	#执行向量乘法
+ 	def *(scalar)
+ 		Box.new(@width*scalar, @height*scalar)
+ 	end
+end 
+
+#冻结对象
+class BoxEight
+	def initialize(w,h) #初始化width和height
+		@width,@height = w, h
+	end 
+
+	#访问器方法
+	def getWidth
+		@width
+	end 
+
+	def getHeight
+		@height
+	end
+
+	#设置器方法
+	def setWidth8(value)
+		@width = value
+	end 
+
+	def setHeight8(value)
+		@height = value
+	end 
+end 
+
+#创建对象
+box8 = BoxEight.new(6,23)
+
+#冻结对象
+box8.freeze
+if(box8.frozen?)
+	puts "Box object is frozen object"
+else
+	puts "Box object is normal object"
+end 
+
+#尝试使用设置器方法
+box8.setWidth8(6)
+box8.setHeight8(23)
+
+#使用访问器方法
+x8 = box8.getWidth
+y8 = box.getHeight
+
+puts "Width of the box is: #{x8}"
+puts "Width of the box is: #{y8}"
+
+
+
+
+
+
 
 
 
