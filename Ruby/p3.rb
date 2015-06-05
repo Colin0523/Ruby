@@ -335,18 +335,45 @@ puts "Box weight is: #{BoxNine::BOXWEIGHT}"
 
 
 #使用allocate
+class BoxTen
+	attr_accessor :width, :height
+
+	#构造器方法
+	def initialize(w,h)
+		@width, @height = w,h 
+	end 
+
+	#实例方法
+	def getArea
+
+		@width * @height
+	end
+
+end 
+
+#使用new创建对象
+box10 = BoxTen.new(77,100)
+
+#使用allocate 创建一个对象
+box101 = BoxTen.allocate
 
 
+#使用box10调用实例方法
+a = box10.getArea
+puts "Area of box is #{a}"
+
+#使用box101调用实例方法
+#b = box101.getArea
+#puts "Area of box is #{b}"
 
 
+#类信息
+# class BoxEleven
+# 	#输出类信息
+# 	puts "Type of self = #{self.type}"
+#     puts "Name of self = #{self.name}"
 
-
-
-
-
-
-
-
+# end 
 
 
 
