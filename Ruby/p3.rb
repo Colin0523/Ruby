@@ -288,31 +288,53 @@ end
 box8 = BoxEight.new(6,23)
 
 #冻结对象
-box8.freeze
-if(box8.frozen?)
-	puts "Box object is frozen object"
-else
-	puts "Box object is normal object"
-end 
+# box8.freeze
+# if(box8.frozen?)
+# 	puts "Box object is frozen object"
+# else
+# 	puts "Box object is normal object"
+# end 
 
-#尝试使用设置器方法
-box8.setWidth8(6)
-box8.setHeight8(23)
+# #尝试使用设置器方法
+# box8.setWidth8(6)
+# box8.setHeight8(23)
 
-#使用访问器方法
-x8 = box8.getWidth
-y8 = box.getHeight
+# #使用访问器方法
+# x8 = box8.getWidth
+# y8 = box.getHeight
 
-puts "Width of the box is: #{x8}"
-puts "Width of the box is: #{y8}"
-
-
+# puts "Width of the box is: #{x8}"
+# puts "Width of the box is: #{y8}"
 
 
 
+#类常量
+class BoxNine
+	BOX_COMPANY = "TATA Inc"
+	BOXWEIGHT = 10
+
+	def initialize(w,h)
+		@width, @height = w, h 
+		
+	end
+
+ 	#实例方法
+ 	def getArea
+ 		@width * @height
+ 	end 
+end
+
+#创建对象
+box9 = BoxNine.new(23,25)
+
+#调用实例方法
+a = box9.getArea()
+puts "Area of the box is: #{a}"
+puts BoxNine::BOX_COMPANY
+puts "Box weight is: #{BoxNine::BOXWEIGHT}"
 
 
-
+#使用allocate
 
 
 
