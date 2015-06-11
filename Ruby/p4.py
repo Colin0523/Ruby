@@ -12,10 +12,10 @@ class Employee:
 
 
 	def displayCount(self):
-		print "Total Employee %d " % Employee.empCount
+		print ("Total Employee %d " % Employee.empCount)
 
 	def displayEmployee(self):
-		print "Name : " ,self.name, ",Salary: " ,self.salary
+		print ("Name : " ,self.name, ",Salary: " ,self.salary)
 
 
 "创建Employee 类的第一个对象"
@@ -27,12 +27,12 @@ emp2 = Employee("Manni",5000)
 emp1.displayEmployee()
 emp2.displayEmployee()
 
-print "Total Employee %d " % Employee.empCount
+print ("Total Employee %d " % Employee.empCount)
 
 #python函数
 def printme(str):
 	"打印任何传入的字符串"
-	print str;
+	print (str);
 	return;
 
 #调用函数
