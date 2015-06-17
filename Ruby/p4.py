@@ -86,18 +86,87 @@ sum(10,20)
 
 
 
+#Date and Time 
+from datetime import datetime
+now = datetime.now()
+
+print '%s/%s/%s %s:%s:%s' % (now.year,now.month,now.day,now.hour,now.minute,now.second)
+
+#Conditionals & Control Flow
+#And
+bool_one =  False and False
+
+bool_two =  -(-(-(-2))) == -2 and 4 >= 16**0.5
+
+bool_three = 19 % 4 != 300 / 10 / 10 and False
+
+bool_four = -(1**2) < 2**0 and 10 % 10 <= 20 - 10 * 2
+
+bool_five = True and True
 
 
 
+#And, Or, Not
+# Use boolean expressions as appropriate on the lines below!
+
+# Make me false!
+bool_one = (2 <= 2) and "Alpha" == "Bravo"  # We did this one for you!
+
+# Make me true!
+bool_two = (1 == 2) or 2 == 2
+
+# Make me false!
+bool_three =  10 ** 10 == 50 and "A" == "a"
+
+# Make me true!
+bool_four =  not False and 1 == 1 
+ 
+# Make me true!
+bool_five =  1 < 10 and 50 > 25
+
+#if 
+def using_control_once():
+    if 10/2.0 == 5:
+        return "Success #1"
+
+def using_control_again():
+    if 100 > 10:
+        return "Success #2"
+
+print using_control_once()
+print using_control_again()
+
+#else
+answer = "'Tis but a scratch!"
+
+def black_knight():
+    if answer == "'Tis but a scratch!":
+        return True
+    else:             
+        return  False      # Make sure this returns False
+
+def french_soldier():
+    if answer == "Go away, or I shall taunt you a second time!":
+        return True
+    else:             
+        return False       # Make sure this returns False
+
+print black_knight()
+print french_soldier()
 
 
-
-
-
-
-
-
-
+#elif 
+def greater_less_equal_5(answer):
+    if answer > 5:
+        return 1
+    elif -1 < answer < 5:          
+        return -1
+    else:
+        return 0
+        
+print greater_less_equal_5(4)
+print greater_less_equal_5(5)
+print greater_less_equal_5(6)
 
 
 
