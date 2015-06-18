@@ -170,8 +170,16 @@ print greater_less_equal_5(6)
 
 
 
-
-
+def pig(l):
+    #l = raw_input("Please input a word: ")
+    if l != type(str):
+        print "Please input a word!"
+    elif l.len() == 1: 
+        print "Please input a word with more letters!"
+    else:
+        l = len(len(d) - len(d-1))
+        print d + 'ay'
+pig("a")
 
 
 
