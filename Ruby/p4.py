@@ -86,6 +86,14 @@ sum(10,20)
 
 
 
+def yx(x):
+	if x < 10 
+		print "No Way"
+
+	else 
+		print "yes do"
+
+yx(11)
 
 
 
