@@ -170,22 +170,41 @@ print greater_less_equal_5(6)
 
 
 
-def pig(l):
-    #l = raw_input("Please input a word: ")
-    if l != type(str):
-        print "Please input a word!"
-    elif l.len() == 1: 
-        print "Please input a word with more letters!"
-    else:
-        l = len(len(d) - len(d-1))
-        print d + 'ay'
-pig("a")
+#translator game
+#wrong way
+# l = raw_input("Please input a word: ")
+# if l != type("a"):
+
+#         print "Please input a word!"
+
+# elif l.len() == 1: 
+
+#         print "Please input a word with more letters!"
+# else:
+
+#     l = len(len(l) - len(l-1))
+#     print l + 'ay'
 
 
 
+#right way 
+# print 'Welcome to the Pig Latin Translator!'
 
+# # Start coding here!
+# pyg = 'ay'
 
+# original = raw_input('Enter a word:')
 
+# if len(original) > 0 and original.isalpha():
+#     word = original.lower()
+#     first = word[0]
+    
+#     new_word = word  + pyg
+#     new_word [1:len(new_word)]
+#     print new_word
+   
+# else:
+#      print 'empty'
 
 
 
