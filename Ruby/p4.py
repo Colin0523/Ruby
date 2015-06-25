@@ -207,6 +207,94 @@ print greater_less_equal_5(6)
 #      print 'empty'
 
 
+#function  方法内调用其他方法
+def cube(number):
+    mul = number ** 3
+    return mul
+    
+def by_three(number):
+    if number % 3 == 0:
+        return cube(number)
+        
+    else:
+        return False
+
+#import
+# Ask Python to print sqrt(25) on line 3.
+import math
+print math.sqrt(25)
+
+
+#function import 引用指定模块的方法
+from math import sqrt
+
+#universal import 引用指定模块的所有方法
+from math import *
+
+#以下是指引用模块时注意方法名冲突
+"""Universal imports may look great on the surface, but they're not a good idea for one very important reason: 
+
+they fill your program with a ton of variable and function names without the safety of those names still being 
+
+associated with the module(s) they came from.
+
+If you have a function of your very own named sqrt and you import math, your function is safe: there is your sqrt a
+
+nd there is math.sqrt. If you do from math import *, however, you have a problem: namely, two different functions with
+
+ the exact same name.
+
+Even if your own definitions don't directly conflict with names from imported modules, if you import * from several 
+
+modules at once, you won't be able to figure out which variable or function came from where.
+
+For these reasons, it's best to stick with either import module and type module.name or just import specific variables 
+
+and functions from various modules as needed."""
+
+
+#max,min,abs
+maxmum = max(10,-100,3000)
+print maxmum
+
+minimum = min(10,-100,3000)
+print minimum
+
+
+absolute = abs(-80)
+print absolute
+
+#type
+print type(41)
+print type(80.5)
+print type("hello")
+
+
+#ex
+def shut_down(s):
+    if s == "yes":
+        return "Shutting down"
+    
+    elif s == "no":
+        return "Shutdown aborted"
+    
+    else:
+        return "Sorry"
+
+
+from math import sqrt
+print sqrt(13689)
+
+print type(False)
+
+
+def distance_from_zero(thing):
+    if type(thing)==int or type(thing)==float:
+        return abs(thing)
+        
+    else:
+        return "Nope"
+
 
 
 
