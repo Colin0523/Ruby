@@ -295,6 +295,33 @@ def distance_from_zero(thing):
     else:
         return "Nope"
 
+#vacation cost
+def hotel_cost(nights):
+    return nights * 140
 
 
+def plane_ride_cost(city):
+    if city == "Charlotte":
+        return 183
+    elif city =="Tampa":
+        return 220
+    elif city =="Pittsburgh":
+        return 222
+    elif city =="Los Angeles":
+        return 475
 
+
+def rental_car_cost(days):
+    cost = days * 40
+    if days <3:
+        return cost
+    elif days >= 3 and days < 7:
+        return cost-20
+    else:
+        return  cost - 50
+
+def trip_cost(city,days,spending_money):
+    all_cost = hotel_cost(days) + rental_car_cost(days) + plane_ride_cost(city)+ spending_money
+    print  "All_cost is: " + all_cost
+
+trip_cost("Pittsburgh",10,100)
