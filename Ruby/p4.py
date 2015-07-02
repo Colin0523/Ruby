@@ -1,8 +1,8 @@
 #coding=utf-8
 
-#python类
+#python绫�
 class Employee:
-	'所有员工的基类'
+	'鎵�湁鍛樺伐鐨勫熀绫�
 	empCount = 0
 
 	def __init__(self,name,salary):
@@ -12,83 +12,95 @@ class Employee:
 
 
 	def displayCount(self):
-		print "Total Employee %d " % Employee.empCount
+		print ("Total Employee %d " % Employee.empCount)
 
 	def displayEmployee(self):
-		print "Name : " ,self.name, ",Salary: " ,self.salary
+		print ("Name : " ,self.name, ",Salary: " ,self.salary)
 
 
-"创建Employee 类的第一个对象"
+"鍒涘缓Employee 绫荤殑绗竴涓璞�
+#coding = uft8
 emp1 = Employee("Zara", 2000)
 
-"创建Employee 类的第一个对象"
+"鍒涘缓Employee 绫荤殑绗竴涓璞�
 emp2 = Employee("Manni",5000)
 
 emp1.displayEmployee()
 emp2.displayEmployee()
 
-print "Total Employee %d " % Employee.empCount
+print ("Total Employee %d " % Employee.empCount)
 
-#python函数
+#python鍑芥暟
 def printme(str):
-	"打印任何传入的字符串"
-	print str;
+	"鎵撳嵃浠讳綍浼犲叆鐨勫瓧绗︿覆"
+	print (str);
 	return;
 
-#调用函数
-printme("调用用户自定义函数")
-printme("再次调用同一函数")
+#璋冪敤鍑芥暟
+printme("璋冪敤鐢ㄦ埛鑷畾涔夊嚱鏁�)
+printme("鍐嶆璋冪敤鍚屼竴鍑芥暟")
 
-#可写函数说明
+#鍙啓鍑芥暟璇存槑
 def changename(mylist):
-	"修改传入的列表"
+	"淇敼浼犲叆鐨勫垪琛�
 	mylist.append([1,2,3,4])
-	print "函数内取值", mylist
+	print "鍑芥暟鍐呭彇鍊�, mylist
 	return
     
 
-#调用changename函数
+#璋冪敤changename鍑芥暟
 mylist = [10,20,30];
 changename(mylist);
-print "函数外取值：", mylist
+print "鍑芥暟澶栧彇鍊硷細", mylist
 
-#参数
+#鍙傛暟
 def printinfo(name,age):
 	print "Name :",name
 	print "Age : ", age 
 	return
 
-#调用
+#璋冪敤
 printinfo("YX",17)
 
-#不定长参数
+#涓嶅畾闀垮弬鏁�
 def printinfot(arg1,*vartuple):
-	"打印传入的任何参数"
-	print "输出:"
+	"鎵撳嵃浼犲叆鐨勪换浣曞弬鏁�
+	print "杈撳嚭:"
 	print arg1
 	for var in vartuple:
 		print var
 	return;
 
-#调用函数
+#璋冪敤鍑芥暟
 printinfot(70,80,90)
 
 #return
 def sum(a1,a2):
-	#返回两参数的和
+	#杩斿洖涓ゅ弬鏁扮殑鍜�
 	total = a1 + a2 
 	print "Inside the function: ", total 
 	return total;
 
 
-#调用
+#璋冪敤
 sum(10,20)
 
 
 
+
+def yx(x):
+	if x < 10 
+		print "No Way"
+
+	else 
+		print "yes do"
+
+yx(11)
+
 #Date and Time 
 from datetime import datetime
 now = datetime.now()
+
 
 print '%s/%s/%s %s:%s:%s' % (now.year,now.month,now.day,now.hour,now.minute,now.second)
 
