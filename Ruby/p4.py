@@ -2,7 +2,7 @@
 
 #python绫�
 class Employee:
-	'鎵�湁鍛樺伐鐨勫熀绫�
+	'鎵�湁鍛樺伐鐨勫熀绫�'
 	empCount = 0
 
 	def __init__(self,name,salary):
@@ -18,11 +18,11 @@ class Employee:
 		print ("Name : " ,self.name, ",Salary: " ,self.salary)
 
 
-"鍒涘缓Employee 绫荤殑绗竴涓璞�
+"鍒涘缓Employee 绫荤殑绗竴涓璞�"
 #coding = uft8
 emp1 = Employee("Zara", 2000)
 
-"鍒涘缓Employee 绫荤殑绗竴涓璞�
+"鍒涘缓Employee 绫荤殑绗竴涓璞�"
 emp2 = Employee("Manni",5000)
 
 emp1.displayEmployee()
@@ -37,14 +37,14 @@ def printme(str):
 	return;
 
 #璋冪敤鍑芥暟
-printme("璋冪敤鐢ㄦ埛鑷畾涔夊嚱鏁�)
+printme("璋冪敤鐢ㄦ埛鑷畾涔夊嚱鏁�")
 printme("鍐嶆璋冪敤鍚屼竴鍑芥暟")
 
 #鍙啓鍑芥暟璇存槑
 def changename(mylist):
-	"淇敼浼犲叆鐨勫垪琛�
+	"淇敼浼犲叆鐨勫垪琛�"
 	mylist.append([1,2,3,4])
-	print "鍑芥暟鍐呭彇鍊�, mylist
+	print "鍑芥暟鍐呭彇鍊�, mylist"
 	return
     
 
@@ -64,7 +64,7 @@ printinfo("YX",17)
 
 #涓嶅畾闀垮弬鏁�
 def printinfot(arg1,*vartuple):
-	"鎵撳嵃浼犲叆鐨勪换浣曞弬鏁�
+	"鎵撳嵃浼犲叆鐨勪换浣曞弬鏁�"
 	print "杈撳嚭:"
 	print arg1
 	for var in vartuple:
@@ -89,10 +89,10 @@ sum(10,20)
 
 
 def yx(x):
-	if x < 10 
+	if x < 10:
 		print "No Way"
 
-	else 
+	else:
 		print "yes do"
 
 yx(11)
