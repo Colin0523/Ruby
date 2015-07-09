@@ -30,3 +30,83 @@ def fizz_count(x):
   
 fizz = ["fizz","cat","fizz"]
 fizz_count(fizz)
+
+
+#example
+prices = {
+    "banana" : 4, "apple" : 2,
+    "orange" : 1.5,"pear" : 3 
+}
+
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+total = 0
+for key in prices:
+    print key
+    print "price: %s"%prices[key]
+    print "stock: %s" %stock[key]
+    total += prices[key] * stock[key]
+    print "toatl:" + str(total)
+
+#shopping list
+shopping_list = ["banana", "orange", "apple"]
+
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+    
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+
+# Write your code below!
+def compute_bill(food):
+    total = 0
+    for key in food:
+        print "food: %s"%key,
+        print "prices: %s " %prices[key]
+        total += prices[key]
+    return total
+    print total
+
+compute_bill(shopping_list)
+
+#panduan
+shopping_list = ["banana", "orange", "apple"]
+
+stock = {
+    "banana": 6,
+    "apple": 0,
+    "orange": 32,
+    "pear": 15
+}
+    
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3
+}
+
+# Write your code below!
+def compute_bill(food):
+    total = 0
+    for key in food:
+       if stock[key] > 0:
+            total += prices[key]
+            stock[key] = stock[key] - 1
+       else:
+            print "Out of %s" % key
+    return total
+  
+
