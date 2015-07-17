@@ -33,5 +33,16 @@ ship_col = random_col(board)
 print ship_row
 print ship_col
 
-#if ship_row == guess_row:
-#    print "Congratulations! You sank my battleship!"
+print ship_row
+print ship_col
+board[guess_row][guess_col] = "x"
+board[guess_col][guess_row] = "x"
+
+
+
+# Write your code below!
+if ship_row == guess_row:
+    print "Congratulations! You sank my battleship!"
+else:
+    print "You missed my battleship!"
+    print print_board(board)
