@@ -143,7 +143,12 @@ def median(l):
 
 print median(l)
 
-
-
+def median(ListIn):
+    ListIn = sorted(ListIn)
+    n = len(ListIn)
+    if n % 2 == 0:
+        return (ListIn[n/2-1] + ListIn[n/2])/2.0
+    else:
+        return ListIn[(n-1)/2]
 
 
